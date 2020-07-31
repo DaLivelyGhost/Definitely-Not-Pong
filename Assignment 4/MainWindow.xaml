@@ -1,0 +1,48 @@
+﻿<Window x:Name="gameWindow" x:Class="Assignment_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="690.974" Width="800" KeyDown="gameWindow_KeyDown" KeyUp="gameWindow_KeyUp">
+    <Grid>
+        <Canvas x:Name="PlayField" HorizontalAlignment="Left" Height="469" Margin="10,181,0,0" VerticalAlignment="Top" Width="772" Background="Black">
+            <Ellipse x:Name="GameBall" Fill="#FFF4F4F5" Height="55" Canvas.Left="358" Stroke="Black" Canvas.Top="209" Width="55" Visibility="Hidden"/>
+            <Rectangle x:Name="PlayerRect" Fill="#FFF4F4F5" Height="140" Canvas.Left="31" Stroke="White" Canvas.Top="171" Width="18"/>
+            <TextBlock x:Name="txtblk_title" Canvas.Left="182" TextWrapping="Wrap" Text="Definitely Not Pong" Canvas.Top="10" Foreground="White" FontSize="48"/>
+            <TextBlock x:Name="txtblk_controls" Height="55" Canvas.Left="274" TextWrapping="Wrap" Canvas.Top="171" Width="152" Foreground="White" FontSize="36"><Run Text="Controls:"/></TextBlock>
+            <TextBlock x:Name="txtblk_up" Height="33" Canvas.Left="274" TextWrapping="Wrap" Text="UP - up arrow" Canvas.Top="231" Width="172" Foreground="White" FontSize="22"/>
+            <TextBlock x:Name="txtblk_down" Height="33" Canvas.Left="274" TextWrapping="Wrap" Canvas.Top="269" Width="212" Foreground="White" FontSize="22"><Run Text="DOWN - down arrow"/></TextBlock>
+            <TextBlock x:Name="txtblk_start" Height="33" Canvas.Left="274" TextWrapping="Wrap" Canvas.Top="378" Width="212" Foreground="White" FontSize="22" Text="Press [SPACE] to start"/>
+            <Rectangle x:Name="EnemyRect" Fill="#FFF4F4F5" Height="140" Canvas.Left="721" Stroke="White" Canvas.Top="171" Width="18"/>
+            <TextBlock x:Name="txtblk_reminder" Height="33" Canvas.Left="274" TextWrapping="Wrap" Canvas.Top="319" Width="212" Foreground="White" FontSize="16" Text="You are on the left"/>
+            <TextBlock x:Name="txtblk_paused" Canvas.Left="274" TextWrapping="Wrap" Text="[Paused]" Canvas.Top="89" Foreground="White" FontSize="48" Visibility="Hidden"/>
+            <TextBlock x:Name="txtblk_lives" Height="64" Canvas.Left="272" TextWrapping="Wrap" Text="Lives: " Canvas.Top="269" Width="214" Foreground="White" FontSize="36" Visibility="Hidden"/>
+        </Canvas>
+        <TextBlock x:Name="txtblk_score" HorizontalAlignment="Left" Height="30" Margin="560,64,0,0" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" Width="60" FontSize="22" RenderTransformOrigin="0.45,0.2"/>
+        <TextBlock x:Name="txtblk_scoreamount" HorizontalAlignment="Left" Margin="560,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Height="52" FontSize="36"/>
+        <TextBlock x:Name="txtblk_highscore" HorizontalAlignment="Left" Height="30" Margin="38,64,0,0" TextWrapping="Wrap" Text="High Score" VerticalAlignment="Top" Width="122" FontSize="22" RenderTransformOrigin="0.45,0.2"/>
+        <TextBlock x:Name="txtblk_highscoreamount" HorizontalAlignment="Left" Margin="38,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Height="52" FontSize="36"/>
+        <Menu HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="792">
+            <MenuItem x:Name="mnuitm_game" Header="Game" Height="29" Width="50">
+                <MenuItem x:Name="mnuitm_start" Header="Start/Resume" HorizontalAlignment="Left" Height="20" Width="165" Margin="0,0,-25,0" Click="mnuitm_start_Click"/>
+                <MenuItem x:Name="mnuitm_pause" Header="Pause" HorizontalAlignment="Left" Height="20" Width="165" Click="mnuitm_pause_Click"/>
+                <MenuItem x:Name="mnuitm_quit" Header="_Quit" HorizontalAlignment="Left" Height="20" Width="165" Click="mnuitm_quit_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="mnuitm_help" Header="Help" Height="29" Width="40" Click="mnuitm_help_Click"/>
+        </Menu>
+        <Image x:Name="img_flavorBackground" HorizontalAlignment="Left" Height="136" Margin="301,40,0,0" VerticalAlignment="Top" Width="136" Source="Flavor Background.png" Visibility="Hidden"/>
+        <TextBlock x:Name="txtblk_flavor" HorizontalAlignment="Left" Height="164" Margin="295,19,0,0" TextWrapping="Wrap" Text="x2" VerticalAlignment="Top" Width="138" FontSize="112" TextAlignment="Center" FontWeight="Bold" Foreground="#FFF50000" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="14.141"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+    </Grid>
+</Window>

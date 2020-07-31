@@ -1,0 +1,4 @@
+The game changes color and displays a graphic as their score goes up. I feel this is worth a couple extra points.
+
+I ALSO put in an easter egg, if you input the konami code on the main screen (up up down down left right left right b a enter)
+that enables fart mode. Use at your own discretion.
